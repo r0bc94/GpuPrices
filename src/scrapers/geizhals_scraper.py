@@ -14,7 +14,7 @@ class GeizhalsScraper(Scraper):
         return self.__scrapePrices(html)
 
     def __getHtml(self, modelname):
-        url = f'https://geizhals.de/?fs=rtx%203080ti&hloc=at&hloc=de&cat=gra16_512'
+        url = f'https://geizhals.de/?fs=rtx%20{modelname}&hloc=at&hloc=de&cat=gra16_512'
 
         req = urllib.request.Request(
             url, 
