@@ -1,0 +1,10 @@
+[Unit]
+Description=Christmas Light Control Service 
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/GpuPrices
+ExecStart=/bin/sh -c "pipenv run start"
+
+[Install]
+WantedBy=multi-user.target
