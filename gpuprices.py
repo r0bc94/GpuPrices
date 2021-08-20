@@ -6,15 +6,15 @@ from src.gpu_influx_client import GpuInfluxClient
 from src.scraperconfig import scrapers
 
 def parseArguments():
-    parser = configargparse.ArgumentParser()
+    parser = configargparse.ArgParser(default_config_files=['config.conf'])
 
-    parser.add_argument('gpumodel', type=str, help='The name of the nvidia rtx gpu module to look for.')
+    parser.add_argument('--gpumodel', type=str, help='The name of the nvidia rtx gpu module to look for.')
 
     influxgroup = parser.add_argument_group('influx connection')
-    influxgroup.add_argument('influxurl', type=str, help='Url to the influxdb to use')
-    influxgroup.add_argument('influxtoken', type=str, help='Token for the Influxdb connection')
-    influxgroup.add_argument('influxorg', type=str, help='Orga String')
-    influxgroup.add_argument('influxbucket', type=str, help='Name of the Bucket to use.')
+    influxgroup.add_argument('--influxurl', type=str, help='Url to the influxdb to use')
+    influxgroup.add_argument('--influxtoken', type=str, help='Token for the Influxdb connection')
+    influxgroup.add_argument('--influxorg', type=str, help='Orga String')
+    influxgroup.add_argument('--influxbucket', type=str, help='Name of the Bucket to use.')
 
     return parser.parse_args()
 
