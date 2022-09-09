@@ -1,0 +1,10 @@
+[Unit]
+Description=Runs the gpuprices scraper service which scrapes for gpuprices from various sources
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=30min
+Unit=gpuprices.service
+
+[Install]
+WantedBy=multi-user.target
